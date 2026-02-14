@@ -1,4 +1,4 @@
-// ====================================
+ // ====================================
 // البيانات التفصيلية للحروف
 // ====================================
 const letterDetails = {
@@ -144,10 +144,12 @@ const letterExamples = {
 };
 
 // ====================================
-// تحميل الأصوات - طريقة محسّنة للموبايل
+// تحميل الأصوات - أسرع طريقة ممكنة!
 // ====================================
-const audioCache = {};
-const exampleCache = {};
+let audioContext;
+const audioBuffers = {};
+const exampleBuffers = {};
+let isAudioReady = false;
 
 // قائمة مصادر الأصوات
 const audioSources = {
@@ -160,21 +162,26 @@ const audioSources = {
   ق: "audios/قاف.mp3",
   ك: "audios/كاف.mp3",
   ج: "audios/جيم.mp3",
-  ش: "audios/شين.mp3",
+  ش: "audios/شين.mp3", //هون بدنا مثال
   ي: "audios/ياء غير .mp3",
   ض: "audios/ضاد.mp3",
   ل: "audios/لام.mp3",
   ن: "audios/نون.mp3",
   ر: "audios/راء.mp3",
   ط: "audios/طاء.mp3",
+  ط: "audios/طاء.mp3",
+
   د: "audios/دال.mp3",
   ت: "audios/تاء.mp3",
+
   ظ: "audios/ظاء.mp3",
   ذ: "audios/ذال.mp3",
-  ث: "audios/ثاء مثال (2).mp3",
+  ث: "audios/ثاء مثال (2).mp3", //هون بدنا مثال
+
   ص: "audios/صاد.mp3",
   س: "audios/سين.mp3",
   ز: "audios/زاي.mp3",
+
   ف: "audios/فاء.mp3",
   م: "audios/ميم.mp3",
   ب: "audios/باء .mp3",
@@ -201,20 +208,72 @@ const exampleSources = {
   ط: "audios/طاء مثال.mp3",
   د: "audios/دال مثال.mp3",
   ت: "audios/تاء مثال.mp3",
+
   ظ: "audios/ظاء مثال.mp3",
   ذ: "audios/ذال مثال.mp3",
   ث: "audios/ثاء مثال.mp3",
+
   ص: "audios/صاد مثال.mp3",
   س: "audios/السين مثال.mp3",
   ز: "audios/زاي مثال.mp3",
+
   ف: "audios/فاء مثال.mp3",
   م: "audios/ميم مثال.mp3",
   ب: "audios/باء مثال.mp3",
   و: "audios/واو غير مثال.mp3",
 };
 
+// تهيئة Audio Context
+function initAudioContext() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+}
+
+// تحميل ملف صوتي واحد
+// تحميل ملف صوتي واحد
+async function loadAudioFile(letter, url, targetBuffers, type = "حرف") {
+  try {
+    const response = await fetch(url);
+    const arrayBuffer = await response.arrayBuffer();
+    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+    targetBuffers[letter] = audioBuffer;
+    console.log(`✅ تم تحميل ${type}: ${letter}`);
+    return true;
+  } catch (error) {
+    console.warn(`⚠️ فشل تحميل ${type} ${letter}:`, error);
+    return false;
+  }
+}
+
+// تحميل الصوت عند الطلب (Lazy Loading) لتسريع الموقع على الموبايل
+async function ensureBuffer(letter, sources, targetBuffers, typeLabel) {
+  initAudioContext();
+
+  // استئناف Audio Context (مهم خصوصاً على الموبايل / iPhone)
+  if (audioContext && audioContext.state === "suspended") {
+    await audioContext.resume();
+  }
+
+  // إذا كان الصوت محمّل من قبل
+  if (targetBuffers[letter]) return targetBuffers[letter];
+
+  const url = sources[letter];
+  if (!url) return null;
+
+  const ok = await loadAudioFile(letter, url, targetBuffers, typeLabel);
+  return ok ? targetBuffers[letter] : null;
+}
+
+
+// تحميل جميع الأصوات عند فتح الصفحة
+// تحميل جميع الأصوات عند فتح الصفحة
+window.addEventListener("DOMContentLoaded", () => {
+  console.log("✅ الصفحة جاهزة. سيتم تحميل الأصوات والفيديوهات عند الطلب.");
+});
+
 // ====================================
-// دالة تشغيل الفيديو - محسّنة للموبايل
+// دالة تشغيل الفيديو عند الضغط على الكارد
 // ====================================
 function playCardVideo(card) {
   const video = card.querySelector("video");
@@ -223,7 +282,6 @@ function playCardVideo(card) {
   if (!video) return;
 
   if (video.paused) {
-    // إيقاف جميع الفيديوهات الأخرى
     document.querySelectorAll("video").forEach((v) => {
       if (v !== video) {
         v.pause();
@@ -233,7 +291,7 @@ function playCardVideo(card) {
       }
     });
 
-    video.play().catch(() => console.warn('فشل تشغيل الفيديو'));
+    video.play().catch(console.warn);
     if (overlay) overlay.classList.add("hidden");
   } else {
     video.pause();
@@ -263,112 +321,151 @@ function closeModal() {
 }
 
 // ====================================
-// دالة تشغيل نطق الحرف - محسّنة وأسرع! ⚡
+// دالة تشغيل نطق الحرف - فوري! ⚡
 // ====================================
-let currentAudio = null;
+let currentSource = null; // لتتبع الصوت الحالي
 
 function playLetter(letter) {
   const btn = event.target;
   btn.classList.add("playing");
 
-  // تشغيل الفيديو تلقائياً
+  // التأكد من تفعيل Audio Context
+  if (!audioContext) {
+    initAudioContext();
+  }
+
+  // استئناف Audio Context في حال كان متوقف
+  if (audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+
+  const buffer = audioBuffers[letter];
+
+  if (buffer) {
+    // إيقاف أي صوت يشتغل حالياً
+    if (currentSource) {
+      try {
+        currentSource.stop();
+      } catch (e) {
+        // تجاهل الخطأ إذا كان الصوت متوقف بالفعل
+      }
+    }
+
+    // إنشاء مصدر صوت جديد
+    const source = audioContext.createBufferSource();
+    source.buffer = buffer;
+    source.connect(audioContext.destination);
+    currentSource = source;
+
+    // تشغيل فوري! ⚡
+    source.start(0);
+    console.log(`▶️ تشغيل صوت حرف: ${letter}`);
+
+    // إزالة التأثير عند انتهاء الصوت
+    source.onended = () => {
+      btn.classList.remove("playing");
+      if (currentSource === source) {
+        currentSource = null;
+      }
+    };
+  } else {
+    // الملف لم يُحمل بعد
+    alert(
+      `الملف الصوتي للحرف "${letter}" لم يكتمل تحميله بعد.
+
+يرجى الانتظار قليلاً ثم المحاولة مرة أخرى.`,
+    );
+    btn.classList.remove("playing");
+    console.warn(`⚠️ الملف الصوتي للحرف ${letter} غير جاهز`);
+  }
+
+  // 🎬 تشغيل الفيديو تلقائياً
   const card = btn.closest(".card");
   if (card) {
     playCardVideo(card);
   }
-
-  // إيقاف أي صوت يشتغل
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-
-  // تحميل الصوت من الكاش أو إنشاء جديد
-  if (!audioCache[letter]) {
-    audioCache[letter] = new Audio(audioSources[letter]);
-  }
-
-  currentAudio = audioCache[letter];
-  currentAudio.currentTime = 0;
-  
-  currentAudio.play()
-    .then(() => {
-      console.log(`▶️ تشغيل صوت حرف: ${letter}`);
-    })
-    .catch((error) => {
-      console.error('خطأ في تشغيل الصوت:', error);
-      btn.classList.remove("playing");
-    });
-
-  // إزالة التأثير عند انتهاء الصوت
-  currentAudio.onended = () => {
-    btn.classList.remove("playing");
-  };
 }
 
 // ====================================
-// دالة تشغيل مثال الحرف من القرآن - محسّنة! ⚡
+// دالة تشغيل مثال الحرف من القرآن
 // ====================================
-let currentExample = null;
+// ====================================
+// دالة تشغيل مثال الحرف من القرآن - فوري! ⚡
+// ====================================
+let currentExampleSource = null; // لتتبع صوت المثال الحالي
 
 function playExample(letter) {
   const btn = event.target;
   btn.classList.add("playing");
 
-  // تشغيل الفيديو تلقائياً
+  // التأكد من تفعيل Audio Context
+  if (!audioContext) {
+    initAudioContext();
+  }
+
+  // استئناف Audio Context في حال كان متوقف
+  if (audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+
+  const buffer = exampleBuffers[letter];
+
+  if (buffer) {
+    // إيقاف أي مثال يشتغل حالياً
+    if (currentExampleSource) {
+      try {
+        currentExampleSource.stop();
+      } catch (e) {
+        // تجاهل الخطأ إذا كان الصوت متوقف بالفعل
+      }
+    }
+
+    // إنشاء مصدر صوت جديد
+    const source = audioContext.createBufferSource();
+    source.buffer = buffer;
+    source.connect(audioContext.destination);
+    currentExampleSource = source;
+
+    // تشغيل فوري! ⚡
+    source.start(0);
+    console.log(`▶️ تشغيل مثال حرف: ${letter}`);
+
+    // إزالة التأثير عند انتهاء الصوت
+    source.onended = () => {
+      btn.classList.remove("playing");
+      if (currentExampleSource === source) {
+        currentExampleSource = null;
+      }
+    };
+  } else {
+    // الملف لم يُحمل بعد
+    const example = letterExamples[letter];
+    alert(
+      `الملف الصوتي للمثال "${example}" لم يكتمل تحميله بعد.
+
+يرجى الانتظار قليلاً ثم المحاولة مرة أخرى.`,
+    );
+    btn.classList.remove("playing");
+    console.warn(`⚠️ الملف الصوتي للمثال ${letter} غير جاهز`);
+  }
+  // 🎬 تشغيل الفيديو تلقائياً
   const card = btn.closest(".card");
   if (card) {
     playCardVideo(card);
   }
-
-  // إيقاف أي مثال يشتغل
-  if (currentExample) {
-    currentExample.pause();
-    currentExample.currentTime = 0;
-  }
-
-  // تحميل المثال من الكاش أو إنشاء جديد
-  if (!exampleCache[letter]) {
-    exampleCache[letter] = new Audio(exampleSources[letter]);
-  }
-
-  currentExample = exampleCache[letter];
-  currentExample.currentTime = 0;
-  
-  currentExample.play()
-    .then(() => {
-      console.log(`▶️ تشغيل مثال حرف: ${letter}`);
-    })
-    .catch((error) => {
-      console.error('خطأ في تشغيل المثال:', error);
-      btn.classList.remove("playing");
-    });
-
-  // إزالة التأثير عند انتهاء الصوت
-  currentExample.onended = () => {
-    btn.classList.remove("playing");
-  };
 }
 
 // ====================================
 // إظهار أيقونة التشغيل عند انتهاء الفيديو
 // ====================================
 document.addEventListener("DOMContentLoaded", function () {
-  // إعداد الفيديوهات مع lazy loading
   document.querySelectorAll("video").forEach((video) => {
-    // تحميل خفيف فقط
-    video.preload = "metadata";
-    
     video.addEventListener("ended", function () {
       const overlay = this.parentElement.querySelector(".video-overlay");
-      if (overlay) {
-        overlay.classList.remove("hidden");
-      }
+      overlay.classList.remove("hidden");
       this.currentTime = 0;
     });
   });
-  
-  console.log("✅ الموقع جاهز!");
 });
 
 // ====================================
