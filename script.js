@@ -213,8 +213,8 @@ const exampleSources = {
 // إدارة الصوت - تحميل عند الطلب فقط ⚡
 // ====================================
 let audioContext;
-const audioBuffers = {};      // كاش لأصوات الحروف
-const exampleBuffers = {};    // كاش لأصوات الأمثلة
+const audioBuffers = {}; // كاش لأصوات الحروف
+const exampleBuffers = {}; // كاش لأصوات الأمثلة
 let currentSource = null;
 let currentExampleSource = null;
 
@@ -314,7 +314,9 @@ async function playLetter(letter) {
 
   // إيقاف أي صوت حرف يعمل حالياً
   if (currentSource) {
-    try { currentSource.stop(); } catch (e) {}
+    try {
+      currentSource.stop();
+    } catch (e) {}
     currentSource = null;
   }
 
@@ -356,7 +358,9 @@ async function playExample(letter) {
 
   // إيقاف أي مثال يعمل حالياً
   if (currentExampleSource) {
-    try { currentExampleSource.stop(); } catch (e) {}
+    try {
+      currentExampleSource.stop();
+    } catch (e) {}
     currentExampleSource = null;
   }
 
