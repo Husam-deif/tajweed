@@ -1,0 +1,317 @@
+/* ====================================
+   إعدادات عامة
+==================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e5128 0%, #2d6a4f 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* ====================================
+   الحاوية الرئيسية
+==================================== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ====================================
+   العنوان والعنوان الفرعي
+==================================== */
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    text-align: center;
+    color: rgba(255,255,255,0.9);
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+/* ====================================
+   شبكة البطاقات
+==================================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* ====================================
+   البطاقة (Card)
+==================================== */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* الخط الملون في أعلى البطاقة */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #2d6a4f 0%, #1e5128 100%);
+}
+
+/* تأثير الحركة عند التمرير على البطاقة */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* ====================================
+   عرض الحرف
+==================================== */
+.letter-display {
+    text-align: center;
+    font-size: 4em;
+    color: #2d6a4f;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(45, 106, 79, 0.2);
+}
+
+/* ====================================
+   الفيديو
+==================================== */
+.makhraj-video {
+    width: 100%;
+    height: 200px;
+    background: #000;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.makhraj-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* طبقة شفافة فوق الفيديو */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* إخفاء الطبقة عند تشغيل الفيديو */
+.video-overlay.hidden {
+    opacity: 0;
+}
+
+/* أيقونة التشغيل */
+.play-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(45, 106, 79, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+/* ====================================
+   معلومات البطاقة
+==================================== */
+.card-title {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card-info {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+/* ====================================
+   الأزرار
+==================================== */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* زر الشرح التفصيلي */
+.btn-detail {
+    background: linear-gradient(135deg, #2d6a4f 0%, #1e5128 100%);
+    color: white;
+}
+
+.btn-detail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(45, 106, 79, 0.4);
+}
+
+/* زر نطق الحرف */
+.btn-audio {
+    background: linear-gradient(135deg, #d4a574 0%, #b8860b 100%);
+    color: white;
+}
+
+.btn-audio:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(212, 165, 116, 0.4);
+}
+
+/* زر المثال */
+.btn-example {
+    background: linear-gradient(135deg, #6b4423 0%, #4a2c1a 100%);
+    color: white;
+}
+
+.btn-example:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(107, 68, 35, 0.4);
+}
+
+/* ====================================
+   النافذة المنبثقة (Modal)
+==================================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+/* حركة ظهور النافذة */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* زر الإغلاق */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+/* عنوان النافذة */
+.modal h2 {
+    color: #2d6a4f;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* نص النافذة */
+.modal p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+/* ====================================
+   تأثيرات التشغيل
+==================================== */
+.playing {
+    animation: pulse 0.5s ease infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ====================================
+   التصميم المتجاوب (للجوال)
+==================================== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    .letter-display {
+        font-size: 3em;
+    }
+}
