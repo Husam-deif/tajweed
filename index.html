@@ -1,1210 +1,477 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مخارج الحروف - دورة التجويد</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <div class="container">
-      <h1>مخارج الحروف في التجويد</h1>
-      <p class="subtitle">تعلم النطق الصحيح لحروف القرآن الكريم</p>
+        <h1>🕌 مخارج الحروف في التجويد</h1>
+        <p class="subtitle">تعلم النطق الصحيح لحروف القرآن الكريم</p>
 
-      <div class="cards-grid">
-        <!-- بطاقة الهمزة-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ء</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/hamzah.mp4" type="video/mp4" />
-            </video>
-          </div>
+        <div class="cards-grid">
+            <!-- 1. بطاقة الهمزة -->
+            <div class="card">
+                <div class="letter-display">ء</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/hamzah.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">الهمزة</h3>
+                <p class="card-info">المخرج: أقصى الحلق</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('أ')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('أ')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('أ')">📝 مثال من القرآن</button>
+                </div>
+            </div>
 
-          <h3 class="card-title">الهمزة</h3>
-          <p class="card-info">
-            المخرج: الجوف | الصفات: مد، رخاوة، استفال، انفتاح
-          </p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('أ');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('أ');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('أ');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
+            <!-- 2. بطاقة حرف الهاء -->
+            <div class="card">
+                <div class="letter-display">هـ</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/haa.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الهاء</h3>
+                <p class="card-info">المخرج: أقصى الحلق</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ه')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ه')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ه')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 3. بطاقة حرف العين -->
+            <div class="card">
+                <div class="letter-display">ع</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/ain.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف العين</h3>
+                <p class="card-info">المخرج: وسط الحلق</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ع')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ع')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ع')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 4. بطاقة حرف الحاء -->
+            <div class="card">
+                <div class="letter-display">ح</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/haa2.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الحاء</h3>
+                <p class="card-info">المخرج: وسط الحلق</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ح')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ح')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ح')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 5. بطاقة حرف الغين -->
+            <div class="card">
+                <div class="letter-display">غ</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/ghain.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الغين</h3>
+                <p class="card-info">المخرج: أدنى الحلق</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('غ')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('غ')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('غ')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 6. بطاقة حرف الخاء -->
+            <div class="card">
+                <div class="letter-display">خ</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/khaa.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الخاء</h3>
+                <p class="card-info">المخرج: أدنى الحلق</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('خ')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('خ')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('خ')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 7. بطاقة حرف القاف -->
+            <div class="card">
+                <div class="letter-display">ق</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/qaf.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف القاف</h3>
+                <p class="card-info">المخرج: أقصى اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ق')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ق')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ق')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 8. بطاقة حرف الكاف -->
+            <div class="card">
+                <div class="letter-display">ك</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/kaf.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الكاف</h3>
+                <p class="card-info">المخرج: أقصى اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ك')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ك')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ك')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 9. بطاقة حرف الجيم -->
+            <div class="card">
+                <div class="letter-display">ج</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/jeem.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الجيم</h3>
+                <p class="card-info">المخرج: وسط اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ج')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ج')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ج')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 10. بطاقة حرف الشين -->
+            <div class="card">
+                <div class="letter-display">ش</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/sheen.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الشين</h3>
+                <p class="card-info">المخرج: وسط اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ش')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ش')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ش')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 11. بطاقة حرف الياء -->
+            <div class="card">
+                <div class="letter-display">ي</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/yaa.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الياء</h3>
+                <p class="card-info">المخرج: وسط اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ي')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ي')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ي')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 12. بطاقة حرف الضاد -->
+            <div class="card">
+                <div class="letter-display">ض</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/daad.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الضاد</h3>
+                <p class="card-info">المخرج: إحدى حافتي اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ض')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ض')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ض')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 13. بطاقة حرف اللام -->
+            <div class="card">
+                <div class="letter-display">ل</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/laam.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف اللام</h3>
+                <p class="card-info">المخرج: أدنى حافتي اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ل')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ل')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ل')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 14. بطاقة حرف النون -->
+            <div class="card">
+                <div class="letter-display">ن</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/noon.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف النون</h3>
+                <p class="card-info">المخرج: طرف اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ن')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ن')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ن')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 15. بطاقة حرف الراء -->
+            <div class="card">
+                <div class="letter-display">ر</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/raa.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الراء</h3>
+                <p class="card-info">المخرج: طرف اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ر')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ر')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ر')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 16. بطاقة حرف الطاء -->
+            <div class="card">
+                <div class="letter-display">ط</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/taa2.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الطاء</h3>
+                <p class="card-info">المخرج: طرف اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ط')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ط')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ط')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 17. بطاقة حرف الدال -->
+            <div class="card">
+                <div class="letter-display">د</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/daal.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الدال</h3>
+                <p class="card-info">المخرج: طرف اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('د')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('د')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('د')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 18. بطاقة حرف التاء -->
+            <div class="card">
+                <div class="letter-display">ت</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/taa.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف التاء</h3>
+                <p class="card-info">المخرج: طرف اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ت')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ت')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ت')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 19. بطاقة حرف الظاء -->
+            <div class="card">
+                <div class="letter-display">ظ</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/thaa2.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الظاء</h3>
+                <p class="card-info">المخرج: طرف اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ظ')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ظ')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ظ')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 20. بطاقة حرف الذال -->
+            <div class="card">
+                <div class="letter-display">ذ</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/thaal.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الذال</h3>
+                <p class="card-info">المخرج: طرف اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ذ')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ذ')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ذ')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 21. بطاقة حرف الثاء -->
+            <div class="card">
+                <div class="letter-display">ث</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/thaa.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الثاء</h3>
+                <p class="card-info">المخرج: طرف اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ث')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ث')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ث')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 22. بطاقة حرف الصاد -->
+            <div class="card">
+                <div class="letter-display">ص</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/saad.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الصاد</h3>
+                <p class="card-info">المخرج: طرف اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ص')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ص')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ص')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 23. بطاقة حرف السين -->
+            <div class="card">
+                <div class="letter-display">س</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/seen.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف السين</h3>
+                <p class="card-info">المخرج: طرف اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('س')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('س')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('س')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 24. بطاقة حرف الزاي -->
+            <div class="card">
+                <div class="letter-display">ز</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/zay.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الزاي</h3>
+                <p class="card-info">المخرج: طرف اللسان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ز')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ز')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ز')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 25. بطاقة حرف الفاء -->
+            <div class="card">
+                <div class="letter-display">ف</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/faa.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الفاء</h3>
+                <p class="card-info">المخرج: الشفة السفلى مع الثنايا العليا</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ف')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ف')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ف')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 26. بطاقة حرف الميم -->
+            <div class="card">
+                <div class="letter-display">م</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/meem.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الميم</h3>
+                <p class="card-info">المخرج: الشفتان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('م')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('م')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('م')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 27. بطاقة حرف الباء -->
+            <div class="card">
+                <div class="letter-display">ب</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/baa.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الباء</h3>
+                <p class="card-info">المخرج: الشفتان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('ب')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('ب')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('ب')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
+            <!-- 28. بطاقة حرف الواو -->
+            <div class="card">
+                <div class="letter-display">و</div>
+                <div class="makhraj-video">
+                    <video preload="none"><source src="videos/waaw.mp4" type="video/mp4"></video>
+                    <div class="video-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <h3 class="card-title">حرف الواو</h3>
+                <p class="card-info">المخرج: الشفتان</p>
+                <div class="buttons-container">
+                    <button class="btn btn-detail" onclick="showDetail('و')">📖 الشرح التفصيلي</button>
+                    <button class="btn btn-audio" onclick="playLetter('و')">🔊 نطق الحرف</button>
+                    <button class="btn btn-example" onclick="playExample('و')">📝 مثال من القرآن</button>
+                </div>
+            </div>
+
         </div>
-
-        <!--بطاقة حرف  الهاء-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">هـ</div>
-          <div class="makhraj-video">
-            <video id="video-baa" preload="metadata">
-              <source src="videos/haa.mp4" type="video/mp4" />
-              متصفحك لا يدعم تشغيل الفيديو
-            </video>
-          </div>
-          <h3 class="card-title">حرف الهاء</h3>
-          <p class="card-info">
-            المخرج: الشفتان | الصفات: جهر، شدة، استفال، انفتاح، إذلاق
-          </p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ه');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ه');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ه');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف العين-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ع</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/ayn.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف العين</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ع');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ع');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ع');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الحاء-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ح</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/haah.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الحاء</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ح');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ح');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ح');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الغين-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">غ</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/Ghin.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الغين</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('غ');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('غ');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('غ');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الخاء-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">خ</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/Kha.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الخاء</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('خ');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('خ');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('خ');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف القاف-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ق</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/Qaf.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف القاف</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ق');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ق');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ق');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الكاف-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ك</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/Kaf.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الكاف</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ك');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ك');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ك');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الجيم-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ج</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/Jim.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الجيم</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ج');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ج');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ج');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-        <!-- بطاقة حرف الشين-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ش</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/shin2.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الشين</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ش');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ش');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ش');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الياء-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ي</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/yaa.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">الياء الغير مدية</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ي');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ي');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ي');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الضاد-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ض</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/dad.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الضاد</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ض');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ض');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ض');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف اللام-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ل</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/lam.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف اللام</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ل');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ل');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ل');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الراء-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ن</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/Non.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف النون</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ن');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ن');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ن');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الراء-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ر</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/Raa.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الراء</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ر');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ر');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ر');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الطاء-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ط</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/tta.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الطاء</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('أ');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ط');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ط');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الدال-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">د</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/thha+ttthhhaa.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الدال</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('د');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('د');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('د');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف التاء-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ت</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/thha+ttthhhaa.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف التاء</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ت');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ت');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ت');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الظاء-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ظ</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/tha.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الظاء</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ظ');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ظ');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ظ');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف ال ذال-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ذ</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/tta.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الذال</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ذ');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ذ');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ذ');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف ال ثاء-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ث</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/tta.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الثاء</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ث');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ث');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ذ');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الصاد-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ص</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/sad.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الصاد</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ص');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ص');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ص');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف السين-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">س</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/sen+shen.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف السين</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('س');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('س');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('س');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الزاي-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ز</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/sen+shen.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الزاي</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ز');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ز');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ز');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الفاء-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ف</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/faa.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الفاء</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ف');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ف');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ف');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الميم-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">م</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/mem.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">حرف الميم</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('م');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('م');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('م');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الباء-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">ب</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/Baa.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">الباء</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('ب');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('ب');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('ب');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-
-        <!-- بطاقة حرف الواو الغير مدية-->
-        <div class="card" onclick="playCardVideo(this)">
-          <div class="letter-display">و</div>
-          <div class="makhraj-video">
-            <video id="video-alef" preload="metadata">
-              <source src="videos/Waa.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <h3 class="card-title">الواو الغير مدية</h3>
-          <p class="card-info">هنا المخرج والصفات سوف تكون</p>
-          <div class="buttons-container">
-            <button
-              class="btn btn-detail"
-              onclick="
-                event.stopPropagation();
-                showDetail('و');
-              "
-            >
-              📖 الشرح التفصيلي
-            </button>
-            <button
-              class="btn btn-audio"
-              onclick="
-                event.stopPropagation();
-                playLetter('و');
-              "
-            >
-              🔊 نطق الحرف
-            </button>
-            <button
-              class="btn btn-example"
-              onclick="
-                event.stopPropagation();
-                playExample('و');
-              "
-            >
-              📝 مثال من القرآن
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- cards-grid -->
     </div>
-    <!-- container -->
 
     <!-- Modal للشرح التفصيلي -->
     <div id="detailModal" class="modal">
-      <div class="modal-content">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-        <h2 id="modalTitle"></h2>
-        <p id="modalText"></p>
-      </div>
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalText"></p>
+        </div>
     </div>
 
-    <!-- ربط ملف الجافاسكربت -->
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
