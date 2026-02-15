@@ -457,7 +457,7 @@ window.addEventListener("DOMContentLoaded", () => {
       mainPage.classList.remove("page-hidden");
       mainPage.classList.add("page-visible");
     }, 700);
-  }, 2800);
+  }, 4000);
 
   // إعداد أحداث انتهاء الفيديو
   document.querySelectorAll("video").forEach((video) => {
