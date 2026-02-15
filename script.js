@@ -3,131 +3,365 @@
 // ====================================
 const letterDetails = {
   أ: {
-    title: "حرف الألف - التفاصيل الكاملة",
-    text: `
-            <strong>المخرج:</strong> الجوف (الخلاء الداخل في الفم والحلق)<br><br>
-            
-            <strong>كيفية النطق:</strong><br>
-            - يخرج الحرف من الجوف بمد الصوت<br>
-            - لا يعتمد على مخرج محدد في الفم<br>
-            - يمتد الصوت في الخلاء الداخلي<br><br>
-            
-            <strong>الصفات:</strong><br>
-            - حرف مد: يمد بمقدار حركتين أو أكثر حسب الأحكام<br>
-            - الرخاوة: يجري معه الصوت<br>
-            - الاستفال: ينخفض اللسان عند النطق<br>
-            - الانفتاح: ينفتح الفم عند النطق<br><br>
-            
-            <strong>ملاحظات مهمة:</strong><br>
-            - لا يكون إلا ساكناً وما قبله مفتوح<br>
-            - من حروف المد الثلاثة (ا، و، ي)
-        `,
+    title: "حرف الألف / الهمزة - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> أقصى الحلق<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يخرج الحرف من أقصى الحلق<br>
+           - ينحبس الصوت ثم ينطلق فجأة<br><br>
+           <strong>الصفات:</strong><br>
+           - الشدة: ينحبس الصوت عند النطق<br>
+           - الاستفال: ينخفض اللسان عند النطق<br>
+           - الانفتاح: ينفتح الفم عند النطق<br>
+           - الهمس: يجري معه النفس`,
   },
-  ب: {
-    title: "حرف الباء - التفاصيل الكاملة",
-    text: `
-            <strong>المخرج:</strong> الشفتان (من انطباقهما)<br><br>
-            
-            <strong>كيفية النطق:</strong><br>
-            - ينطبق الشفتان على بعضهما انطباقاً محكماً<br>
-            - ثم ينفرجان فجأة مع خروج الصوت<br>
-            - يصاحبه جهر وشدة<br><br>
-            
-            <strong>الصفات:</strong><br>
-            - الجهر: يجري معه النفس ولا يجري معه الصوت عند سكونه<br>
-            - الشدة: ينحبس الصوت عند النطق به ثم ينفجر<br>
-            - الاستفال: ينخفض اللسان<br>
-            - الانفتاح: ينفتح الفم<br>
-            - الإذلاق: سهولة النطق به<br><br>
-            
-            <strong>ملاحظات مهمة:</strong><br>
-            - يجب تحقيق انطباق الشفتين الكامل<br>
-            - عدم المبالغة في الشدة
-        `,
+  ه: {
+    title: "حرف الهاء - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> أقصى الحلق<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يخرج من أقصى الحلق مع جريان النفس<br>
+           - صوت رخو مهموس<br><br>
+           <strong>الصفات:</strong><br>
+           - الهمس: يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الانفتاح: ينفتح الفم<br><br>
+           <strong>ملاحظات مهمة:</strong><br>
+           - التمييز بينه وبين الهمزة والحاء`,
   },
-  ت: {
-    title: "حرف التاء - التفاصيل الكاملة",
-    text: `
-            <strong>المخرج:</strong> طرف اللسان مع أصول الثنايا العليا<br><br>
-            
-            <strong>كيفية النطق:</strong><br>
-            - يصعد طرف اللسان إلى أصول الثنايا العليا<br>
-            - يحدث انحباس للصوت ثم انفجار<br>
-            - الصوت مهموس خفيف<br><br>
-            
-            <strong>الصفات:</strong><br>
-            - الهمس: يجري معه النفس ولا يجري معه الصوت<br>
-            - الشدة: ينحبس الصوت ثم ينفجر<br>
-            - الاستفال: ينخفض اللسان<br>
-            - الانفتاح: ينفتح الفم<br><br>
-            
-            <strong>ملاحظات مهمة:</strong><br>
-            - التمييز بينه وبين الطاء بعدم الإطباق<br>
-            - عدم الخلط بينه وبين الثاء
-        `,
-  },
-  ث: {
-    title: "حرف الثاء - التفاصيل الكاملة",
-    text: `
-            <strong>المخرج:</strong> طرف اللسان مع أطراف الثنايا العليا<br><br>
-            
-            <strong>كيفية النطق:</strong><br>
-            - يوضع طرف اللسان على أطراف الثنايا العليا<br>
-            - يخرج الهواء مع احتكاك خفيف<br>
-            - الصوت رخو مهموس<br><br>
-            
-            <strong>الصفات:</strong><br>
-            - الهمس: يجري معه النفس<br>
-            - الرخاوة: يجري معه الصوت<br>
-            - الاستفال: ينخفض اللسان<br>
-            - الانفتاح: ينفتح الفم<br><br>
-            
-            <strong>ملاحظات مهمة:</strong><br>
-            - التمييز بينه وبين السين والتاء<br>
-            - إظهار طرف اللسان قليلاً بين الأسنان
-        `,
-  },
-  ج: {
-    title: "حرف الجيم - التفاصيل الكاملة",
-    text: `
-            <strong>المخرج:</strong> وسط اللسان مع الحنك الأعلى<br><br>
-            
-            <strong>كيفية النطق:</strong><br>
-            - يرتفع وسط اللسان نحو الحنك الأعلى<br>
-            - ينحبس الصوت ثم ينفجر مع جهر<br>
-            - يتميز بصوت مجهور شديد<br><br>
-            
-            <strong>الصفات:</strong><br>
-            - الجهر: لا يجري معه النفس<br>
-            - الشدة: ينحبس الصوت<br>
-            - الاستفال: ينخفض اللسان<br>
-            - الانفتاح: ينفتح الفم<br><br>
-            
-            <strong>ملاحظات مهمة:</strong><br>
-            - عدم المبالغة في التشديد<br>
-            - النطق الفصيح دون تعطيش
-        `,
+  ع: {
+    title: "حرف العين - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> وسط الحلق<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يخرج من وسط الحلق مع انضغاط خفيف<br>
+           - صوت رخو مجهور<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الانفتاح: ينفتح الفم<br><br>
+           <strong>ملاحظات مهمة:</strong><br>
+           - التمييز بينه وبين الغين والهمزة`,
   },
   ح: {
     title: "حرف الحاء - التفاصيل الكاملة",
-    text: `
-            <strong>المخرج:</strong> وسط الحلق<br><br>
-            
-            <strong>كيفية النطق:</strong><br>
-            - يخرج من وسط الحلق<br>
-            - صوت رخو مهموس<br>
-            - يشعر بحرارة خفيفة في الحلق<br><br>
-            
-            <strong>الصفات:</strong><br>
-            - الهمس: يجري معه النفس<br>
-            - الرخاوة: يجري معه الصوت<br>
-            - الاستفال: ينخفض اللسان<br>
-            - الانفتاح: ينفتح الفم<br><br>
-            
-            <strong>ملاحظات مهمة:</strong><br>
-            - التمييز بينه وبين الهاء والخاء<br>
-            - إخراجه من مخرجه الصحيح في الحلق
-        `,
+    text: `<strong>المخرج:</strong> وسط الحلق<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يخرج من وسط الحلق مع احتكاك<br>
+           - صوت رخو مهموس، يشعر بحرارة في الحلق<br><br>
+           <strong>الصفات:</strong><br>
+           - الهمس: يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الانفتاح: ينفتح الفم<br><br>
+           <strong>ملاحظات مهمة:</strong><br>
+           - التمييز بينه وبين الهاء والخاء<br>
+           - إخراجه من مخرجه الصحيح في وسط الحلق`,
+  },
+  غ: {
+    title: "حرف الغين - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> أدنى الحلق (أقرب إلى الفم)<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يخرج من أدنى الحلق مع اهتزاز الجدار الخلفي<br>
+           - صوت رخو مجهور<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستعلاء: يرتفع اللسان نحو الحنك<br>
+           - الانفتاح: ينفتح الفم<br><br>
+           <strong>ملاحظات مهمة:</strong><br>
+           - التمييز بينه وبين العين والخاء`,
+  },
+  خ: {
+    title: "حرف الخاء - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> أدنى الحلق (أقرب إلى الفم)<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يخرج من أدنى الحلق مع احتكاك هواء<br>
+           - صوت رخو مهموس<br><br>
+           <strong>الصفات:</strong><br>
+           - الهمس: يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستعلاء: يرتفع اللسان نحو الحنك<br>
+           - الانفتاح: ينفتح الفم<br><br>
+           <strong>ملاحظات مهمة:</strong><br>
+           - التمييز بينه وبين الغين والحاء`,
+  },
+  ب: {
+    title: "حرف الباء - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> الشفتان (من انطباقهما)<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - ينطبق الشفتان انطباقاً محكماً<br>
+           - ثم ينفرجان فجأة مع خروج الصوت<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الشدة: ينحبس الصوت ثم ينفجر<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الانفتاح: ينفتح الفم<br>
+           - الإذلاق: سهولة النطق به`,
+  },
+  ت: {
+    title: "حرف التاء - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> طرف اللسان مع أصول الثنايا العليا<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يصعد طرف اللسان إلى أصول الثنايا العليا<br>
+           - يحدث انحباس للصوت ثم انفجار خفيف<br><br>
+           <strong>الصفات:</strong><br>
+           - الهمس: يجري معه النفس<br>
+           - الشدة: ينحبس الصوت ثم ينفجر<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الانفتاح: ينفتح الفم`,
+  },
+  ث: {
+    title: "حرف الثاء - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> طرف اللسان مع أطراف الثنايا العليا<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يوضع طرف اللسان بين الأسنان العليا والسفلى<br>
+           - يخرج الهواء مع احتكاك خفيف<br><br>
+           <strong>الصفات:</strong><br>
+           - الهمس: يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الانفتاح: ينفتح الفم`,
+  },
+  ج: {
+    title: "حرف الجيم - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> وسط اللسان مع الحنك الأعلى<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يرتفع وسط اللسان نحو الحنك الأعلى<br>
+           - ينحبس الصوت ثم ينفجر مع جهر<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الشدة: ينحبس الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الانفتاح: ينفتح الفم`,
+  },
+  د: {
+    title: "حرف الدال - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> طرف اللسان مع أصول الثنايا العليا<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يصعد طرف اللسان إلى أصول الثنايا العليا<br>
+           - صوت مجهور شديد<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الشدة: ينحبس الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الانفتاح: ينفتح الفم`,
+  },
+  ذ: {
+    title: "حرف الذال - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> طرف اللسان مع أطراف الثنايا العليا<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يوضع طرف اللسان بين الأسنان<br>
+           - يخرج الصوت مجهوراً مع احتكاك<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الانفتاح: ينفتح الفم`,
+  },
+  ر: {
+    title: "حرف الراء - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> طرف اللسان مع اللثة<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يرتفع طرف اللسان نحو اللثة<br>
+           - يتكرر اللمس بسرعة مع جريان الصوت<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - البينية: بين الشدة والرخاوة<br>
+           - التكرار: يتكرر اللسان في مخرجه<br>
+           - الانحراف: ينحرف الصوت إلى طرف اللسان`,
+  },
+  ز: {
+    title: "حرف الزاي - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> طرف اللسان مع الثنايا السفلى<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يقترب طرف اللسان من الثنايا السفلى<br>
+           - يخرج مع صفير مجهور<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الصفير: يصاحبه صوت كالصفير`,
+  },
+  س: {
+    title: "حرف السين - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> طرف اللسان مع الثنايا السفلى<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يقترب طرف اللسان من الثنايا السفلى<br>
+           - يخرج مع صفير مهموس<br><br>
+           <strong>الصفات:</strong><br>
+           - الهمس: يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الصفير: يصاحبه صفير واضح`,
+  },
+  ش: {
+    title: "حرف الشين - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> وسط اللسان مع الحنك الأعلى<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يرتفع وسط اللسان نحو الحنك<br>
+           - يتفشى الصوت في الفم<br><br>
+           <strong>الصفات:</strong><br>
+           - الهمس: يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - التفشي: انتشار الصوت في الفم`,
+  },
+  ص: {
+    title: "حرف الصاد - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> طرف اللسان مع الثنايا السفلى<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يرتفع اللسان مع الإطباق ويخرج الصوت مع صفير<br><br>
+           <strong>الصفات:</strong><br>
+           - الهمس: يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستعلاء: يرتفع اللسان<br>
+           - الإطباق: ينطبق اللسان على الحنك<br>
+           - الصفير: يصاحبه صفير`,
+  },
+  ط: {
+    title: "حرف الطاء - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> طرف اللسان مع أصول الثنايا العليا<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يرتفع طرف اللسان مع الإطباق<br>
+           - يخرج الصوت مجهوراً شديداً مطبقاً<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الشدة: ينحبس الصوت<br>
+           - الاستعلاء: يرتفع اللسان<br>
+           - الإطباق: ينطبق اللسان على الحنك`,
+  },
+  ظ: {
+    title: "حرف الظاء - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> طرف اللسان مع أطراف الثنايا العليا<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يوضع طرف اللسان بين الأسنان مع الإطباق<br>
+           - يخرج الصوت مجهوراً مطبقاً<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستعلاء: يرتفع اللسان<br>
+           - الإطباق: ينطبق اللسان على الحنك`,
+  },
+  ع: {
+    title: "حرف العين - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> وسط الحلق<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يخرج من وسط الحلق مع انضغاط خفيف<br>
+           - صوت رخو مجهور<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الانفتاح: ينفتح الفم`,
+  },
+  ف: {
+    title: "حرف الفاء - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> باطن الشفة السفلى مع أطراف الثنايا العليا<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يلمس باطن الشفة السفلى أطراف الثنايا العليا<br>
+           - يخرج الهواء مع احتكاك مهموس<br><br>
+           <strong>الصفات:</strong><br>
+           - الهمس: يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الانفتاح: ينفتح الفم`,
+  },
+  ق: {
+    title: "حرف القاف - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> أقصى اللسان مع الحنك الأعلى<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يرتفع أقصى اللسان إلى الحنك الأعلى<br>
+           - ينحبس الصوت ثم ينفجر من أقصى الحلق<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الشدة: ينحبس الصوت<br>
+           - الاستعلاء: يرتفع اللسان<br>
+           - الانفتاح: ينفتح الفم`,
+  },
+  ك: {
+    title: "حرف الكاف - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> أقصى اللسان مع الحنك الأعلى<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يرتفع أقصى اللسان إلى الحنك الأعلى<br>
+           - يخرج الصوت مهموساً شديداً<br><br>
+           <strong>الصفات:</strong><br>
+           - الهمس: يجري معه النفس<br>
+           - الشدة: ينحبس الصوت<br>
+           - الاستفال: ينخفض اللسان نسبياً<br>
+           - الانفتاح: ينفتح الفم`,
+  },
+  ل: {
+    title: "حرف اللام - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> طرف اللسان مع اللثة العليا<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يلتصق طرف اللسان باللثة<br>
+           - يخرج الصوت من جانبي اللسان<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الانحراف: ينحرف إلى جانبي اللسان<br>
+           - الإذلاق: سهل النطق`,
+  },
+  م: {
+    title: "حرف الميم - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> الشفتان من انطباقهما<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - تنطبق الشفتان انطباقاً محكماً<br>
+           - يجري الصوت من الأنف<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الشدة: ينحبس الصوت في الفم<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الغنّة: يخرج جزء من الصوت من الخيشوم`,
+  },
+  ن: {
+    title: "حرف النون - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> طرف اللسان مع اللثة العليا<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يلتصق طرف اللسان باللثة<br>
+           - يجري الصوت من الأنف مع الغنّة<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - الغنّة: يصاحبه صوت الأنف`,
+  },
+  و: {
+    title: "حرف الواو الغير مدية - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> الشفتان مع تضييقهما<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - تستدير الشفتان وتضيقان<br>
+           - يخرج الصوت مجهوراً رخواً<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - اللين: لين في مخرجه`,
+  },
+  ي: {
+    title: "حرف الياء الغير مدية - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> وسط اللسان مع الحنك الأعلى<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - يرتفع وسط اللسان نحو الحنك<br>
+           - يخرج الصوت مجهوراً رخواً<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستفال: ينخفض اللسان<br>
+           - اللين: لين في مخرجه`,
+  },
+  ض: {
+    title: "حرف الضاد - التفاصيل الكاملة",
+    text: `<strong>المخرج:</strong> حافة اللسان مع الأضراس العليا<br><br>
+           <strong>كيفية النطق:</strong><br>
+           - تلتصق حافة اللسان بالأضراس العليا<br>
+           - يخرج الصوت مجهوراً مطبقاً<br><br>
+           <strong>الصفات:</strong><br>
+           - الجهر: لا يجري معه النفس<br>
+           - الرخاوة: يجري معه الصوت<br>
+           - الاستعلاء: يرتفع اللسان<br>
+           - الإطباق: ينطبق اللسان`,
   },
 };
 
@@ -144,7 +378,7 @@ const letterExamples = {
 };
 
 // ====================================
-// قائمة مصادر الأصوات (بدون تغيير الأسماء)
+// مصادر الأصوات (بدون تغيير الأسماء)
 // ====================================
 const audioSources = {
   أ: "audios/hamzah.mp3",
@@ -177,7 +411,6 @@ const audioSources = {
   و: "audios/واو غير.mp3",
 };
 
-// قائمة مصادر أمثلة الحروف (بدون تغيير الأسماء)
 const exampleSources = {
   أ: "audios/hamzah.mp3",
   ه: "audios/هاء مثال.mp3",
@@ -210,12 +443,88 @@ const exampleSources = {
 };
 
 // ====================================
-// إدارة الصوت - تحميل عند الطلب فقط ⚡
+// شاشة التحميل - Splash Screen
+// ====================================
+window.addEventListener("DOMContentLoaded", () => {
+  const splash   = document.getElementById("splash-screen");
+  const mainPage = document.getElementById("main-page");
+
+  // بعد 2.8 ثانية تختفي الشاشة وتظهر الصفحة الرئيسية
+  setTimeout(() => {
+    splash.classList.add("fade-out");
+    setTimeout(() => {
+      splash.style.display = "none";
+      mainPage.classList.remove("page-hidden");
+      mainPage.classList.add("page-visible");
+    }, 700);
+  }, 2800);
+
+  // إعداد أحداث انتهاء الفيديو
+  document.querySelectorAll("video").forEach((video) => {
+    video.addEventListener("ended", function () {
+
+      this.currentTime = 0;
+    });
+  });
+});
+
+// ====================================
+// التبويبات - Tab Switching
+// ====================================
+function switchTab(tabId, clickedBtn) {
+  // أوقف جميع الفيديوهات عند تبديل التبويب
+  document.querySelectorAll("video").forEach((v) => {
+    v.pause();
+    v.currentTime = 0;
+    v.classList.remove("playing-video");
+    const th = v.parentElement.querySelector(".video-thumbnail");
+    if (th) th.classList.remove("hidden");
+  });
+
+  // أزل active من جميع الأزرار والألواح
+  document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+  document.querySelectorAll(".tab-pane").forEach((p) => p.classList.remove("active"));
+
+  // فعّل الزر واللوح المطلوبين
+  clickedBtn.classList.add("active");
+  const pane = document.getElementById("tab-" + tabId);
+  if (pane) pane.classList.add("active");
+}
+
+// ====================================
+// تشغيل الفيديو - Lazy Loading
+// ====================================
+function playCardVideo(card) {
+  const video     = card.querySelector("video");
+  if (!video) return;
+
+  // التحميل الكسول: أضف src و poster عند أول ضغطة فقط
+  if (!video.src && video.dataset.src) {
+    video.src = video.dataset.src;
+  }
+
+  if (video.paused) {
+    // أوقف جميع الفيديوهات الأخرى وأظهر thumbnail-ها
+    document.querySelectorAll("video").forEach((v) => {
+      if (v !== video) {
+        v.pause();
+        v.currentTime = 0;
+    
+      }
+    });
+    video.play().catch(console.warn);
+  } else {
+    video.pause();
+  }
+}
+
+// ====================================
+// إدارة الصوت - تحميل عند الطلب فقط
 // ====================================
 let audioContext;
-const audioBuffers = {}; // كاش لأصوات الحروف
-const exampleBuffers = {}; // كاش لأصوات الأمثلة
-let currentSource = null;
+const audioBuffers   = {};
+const exampleBuffers = {};
+let currentSource        = null;
 let currentExampleSource = null;
 
 function initAudioContext() {
@@ -224,17 +533,15 @@ function initAudioContext() {
   }
 }
 
-// تحميل ملف صوتي واحد عند الحاجة (وتخزينه في الكاش)
 async function loadAudioBuffer(url, cache, letter) {
-  if (cache[letter]) return cache[letter]; // موجود في الكاش
-  const response = await fetch(url);
+  if (cache[letter]) return cache[letter];
+  const response    = await fetch(url);
   const arrayBuffer = await response.arrayBuffer();
-  const buffer = await audioContext.decodeAudioData(arrayBuffer);
-  cache[letter] = buffer;
+  const buffer      = await audioContext.decodeAudioData(arrayBuffer);
+  cache[letter]     = buffer;
   return buffer;
 }
 
-// تشغيل AudioBuffer مباشرة
 function playBuffer(buffer, onEnded) {
   const source = audioContext.createBufferSource();
   source.buffer = buffer;
@@ -245,65 +552,7 @@ function playBuffer(buffer, onEnded) {
 }
 
 // ====================================
-// دالة تشغيل الفيديو - مع التحميل الكسول ⚡
-// ====================================
-function playCardVideo(card) {
-  const video = card.querySelector("video");
-  const overlay = card.querySelector(".video-overlay");
-
-  if (!video) return;
-
-  // --- التحميل الكسول: أضف src عند أول ضغطة ---
-  if (!video.src && video.dataset.src) {
-    video.src = video.dataset.src;
-  }
-
-  if (video.paused) {
-    // أوقف جميع الفيديوهات الأخرى
-    document.querySelectorAll("video").forEach((v) => {
-      if (v !== video) {
-        v.pause();
-        v.currentTime = 0;
-        const ov = v.parentElement.querySelector(".video-overlay");
-        if (ov) ov.classList.remove("hidden");
-      }
-    });
-
-    video.play().catch(console.warn);
-    if (overlay) overlay.classList.add("hidden");
-  } else {
-    video.pause();
-    if (overlay) overlay.classList.remove("hidden");
-  }
-}
-
-// ====================================
-// دالة عرض الشرح التفصيلي
-// ====================================
-function showDetail(letter) {
-  const modal = document.getElementById("detailModal");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalText = document.getElementById("modalText");
-
-  if (!letterDetails[letter]) {
-    alert(`لا يوجد شرح تفصيلي للحرف "${letter}" بعد.`);
-    return;
-  }
-
-  modalTitle.textContent = letterDetails[letter].title;
-  modalText.innerHTML = letterDetails[letter].text;
-  modal.style.display = "flex";
-}
-
-// ====================================
-// دالة إغلاق النافذة المنبثقة
-// ====================================
-function closeModal() {
-  document.getElementById("detailModal").style.display = "none";
-}
-
-// ====================================
-// دالة تشغيل نطق الحرف - تحميل عند الطلب ⚡
+// نطق الحرف
 // ====================================
 async function playLetter(letter) {
   const btn = event.target;
@@ -312,11 +561,8 @@ async function playLetter(letter) {
   initAudioContext();
   if (audioContext.state === "suspended") await audioContext.resume();
 
-  // إيقاف أي صوت حرف يعمل حالياً
   if (currentSource) {
-    try {
-      currentSource.stop();
-    } catch (e) {}
+    try { currentSource.stop(); } catch (e) {}
     currentSource = null;
   }
 
@@ -328,26 +574,22 @@ async function playLetter(letter) {
   }
 
   try {
-    // تحميل من الشبكة (أو من الكاش إذا سبق)
     const buffer = await loadAudioBuffer(url, audioBuffers, letter);
     currentSource = playBuffer(buffer, () => {
       btn.classList.remove("playing");
       currentSource = null;
     });
-    console.log(`▶️ تشغيل صوت حرف: ${letter}`);
   } catch (e) {
-    console.warn(`⚠️ فشل تحميل صوت الحرف ${letter}:`, e);
     alert(`تعذّر تحميل الصوت للحرف "${letter}"`);
     btn.classList.remove("playing");
   }
 
-  // تشغيل الفيديو تلقائياً
   const card = btn.closest(".card");
   if (card) playCardVideo(card);
 }
 
 // ====================================
-// دالة تشغيل مثال الحرف - تحميل عند الطلب ⚡
+// مثال من القرآن
 // ====================================
 async function playExample(letter) {
   const btn = event.target;
@@ -356,11 +598,8 @@ async function playExample(letter) {
   initAudioContext();
   if (audioContext.state === "suspended") await audioContext.resume();
 
-  // إيقاف أي مثال يعمل حالياً
   if (currentExampleSource) {
-    try {
-      currentExampleSource.stop();
-    } catch (e) {}
+    try { currentExampleSource.stop(); } catch (e) {}
     currentExampleSource = null;
   }
 
@@ -372,44 +611,44 @@ async function playExample(letter) {
   }
 
   try {
-    // تحميل من الشبكة (أو من الكاش إذا سبق)
     const buffer = await loadAudioBuffer(url, exampleBuffers, letter);
     currentExampleSource = playBuffer(buffer, () => {
       btn.classList.remove("playing");
       currentExampleSource = null;
     });
-    console.log(`▶️ تشغيل مثال حرف: ${letter}`);
   } catch (e) {
-    console.warn(`⚠️ فشل تحميل مثال الحرف ${letter}:`, e);
     const example = letterExamples[letter] || letter;
     alert(`تعذّر تحميل الصوت لمثال "${example}"`);
     btn.classList.remove("playing");
   }
 
-  // تشغيل الفيديو تلقائياً
   const card = btn.closest(".card");
   if (card) playCardVideo(card);
 }
 
 // ====================================
-// إظهار أيقونة التشغيل عند انتهاء الفيديو
+// الشرح التفصيلي - Modal
 // ====================================
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("video").forEach((video) => {
-    video.addEventListener("ended", function () {
-      const overlay = this.parentElement.querySelector(".video-overlay");
-      if (overlay) overlay.classList.remove("hidden");
-      this.currentTime = 0;
-    });
-  });
-});
+function showDetail(letter) {
+  const modal      = document.getElementById("detailModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalText  = document.getElementById("modalText");
 
-// ====================================
-// إغلاق النافذة المنبثقة عند الضغط خارجها
-// ====================================
+  if (!letterDetails[letter]) {
+    alert(`لا يوجد شرح تفصيلي للحرف "${letter}" بعد.`);
+    return;
+  }
+
+  modalTitle.textContent  = letterDetails[letter].title;
+  modalText.innerHTML     = letterDetails[letter].text;
+  modal.style.display     = "flex";
+}
+
+function closeModal() {
+  document.getElementById("detailModal").style.display = "none";
+}
+
 window.onclick = function (event) {
   const modal = document.getElementById("detailModal");
-  if (event.target == modal) {
-    closeModal();
-  }
+  if (event.target === modal) closeModal();
 };
